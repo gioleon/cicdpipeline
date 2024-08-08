@@ -28,4 +28,17 @@ public class TestControllerTest {
         assertThat(response.getBody()).isNotNull();
         assertThat(response.getBody().get("testing")).isEqualTo("up and running");
     }
+
+    @Test
+    public void testIsActivedMethod() {
+        // Arrange
+
+        // Act
+        ResponseEntity<Map<String, String>> response = testController.isActived();
+
+        // Assert
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().get("active")).isEqualTo("false");
+    }
 }
