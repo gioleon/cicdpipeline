@@ -17,7 +17,7 @@ public class TestController {
         return ResponseEntity.ok().body(Map.of("testing", "up and running"));
     }
 
-    @GetMapping
+    @GetMapping("/isactive")
     public ResponseEntity<Map<String, String>> isActived() {
         return ResponseEntity.ok().body(Map.of("active", "true"));
     }
