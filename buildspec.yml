@@ -15,6 +15,10 @@ phases:
       - echo "building and tagging started image on $(date)"
       - echo "running mvn clean install..."
       - mvn clean install
+      - echo "running unit tests..."
+      - mvn test
+      - echo "running integration tests..."
+      - mvn verify
       - echo "building the Docker image..."
       - docker build -t $REPOSITORY_URI:latest .
       - echo "tagging the Docker image..."
